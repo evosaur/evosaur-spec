@@ -1,0 +1,2 @@
+White_Flame | but you do need to consider if you can lower the overhead of calling supervisor code, and passing messages between processes
+13:06:53          * | \Test_User gets to reading about spectre/meltdown and adds a "GDTs/LDTs are stored directly on the CPU when loaded, and any speculation must check access first, and only to fetch/execute if it is allowed"

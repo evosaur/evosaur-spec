@@ -1,0 +1,50 @@
+MR (Mode Register)
+	CPU mode (16-bit, 32-bit, 64-bit, etc)
+
+	Adjusts size according to current CPU mode
+
+	On read
+		Gives supported modes
+			If ((1 << ([desired mode in bytes] - 1)) & cr0) != 0, then it is supported
+
+			Support for 16-bit mode, 64-bit mode, 128-bit mode, and 256 bit mode would be represented as 111010b
+
+	On write
+		Sets current mode
+			Follows the same pattern as reading
+			100b would represent 32-bit mode
+
+		Only one bit is allowed to be set
+			Triggers <TODO> exception otherwise
+
+		No need for a jump instruction immediately after it
+
+PR (Privilege Register)
+	Consists of flags for specific privileges
+		Bit 0: Can configure everything
+		All other bits are to be configured at runtime
+
+	CPU initializes with it set to all 1s
+	Always readable
+	Writing directly is only allowed to remove permissions
+		Triggers <TODO> exception otherwise
+
+	Additional privileges can be granted by interrupts, exceptions and IRQs as configured by the IDT, EDT and IRQT, respectively
+
+FR (Feature Register)
+	Consists of various bit flags for different features that are currently enabled
+
+	See features/all.txt for a full list
+
+	Read only
+
+OFR (Optional Feature Register)
+	Consists of various bit flags for different features that can be enabled/disabled at runtime
+
+	See features/all.txt for a full list
+
+	On read:
+		Lists features that can be enabled/disabled
+
+	On write:
+		Sets the configurable features, and ignores bits for non-configurable ones

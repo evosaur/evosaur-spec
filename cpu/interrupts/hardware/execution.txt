@@ -1,0 +1,10 @@
+When a hardware interrut occurs:
+	OPR gets set to the PR from the previous code running
+	OIP gets set to the IP from the previous code running
+	PR is set to all 1s
+
+The next hardware interrupt will not occur until after the current processing has been finished via `ireth`
+
+When returning via ireth:
+	PR is set to OPR
+	Execution jumps to OIP

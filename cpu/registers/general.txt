@@ -1,0 +1,13 @@
+There are <n> integer registers, named R0-<n-1>
+	All use two's compliment
+
+	There is an additional register, RS (Register Selector), that offsets the register number from its base
+		This register only has <bits required to store n-1> bits, and its overflow is never recorded
+
+	There is an additional register, RW (Register Window), that controls the number of integer registers available and preserved
+
+There are <n> float registers, named F0-<n-1>
+	There is an additional register, FS (Float Selector), that offsets the register number from its base
+		This register only has <bits required to store n-1> bits, and its overflow is never recorded
+
+	There is an additional register, FW (Float Window), that controls the number of float registers available and preserved

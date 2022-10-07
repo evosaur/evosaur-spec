@@ -1,0 +1,70 @@
+Each entry is n*4 bits long, where n is the current mode in bits
+TODO: Specifiy a limit for them
+
+It uses the following format:
+	(higher address)
+	+---------------------+-------------------------+
+	| upper 4 bits: flags | lower 3/4: base address |
+	+---------------------+-------------------------+
+	| upper 4 bits: type  | lower 3/4: limit        |
+	+---------------------+-------------------------+
+	| permissions required to use                   |
+	+-----------------------------------------------+
+	| permissions not allowed to use                |
+	+-----------------------------------------------+
+	(lower address)
+
+Unspecified bits are ignored for the gdt's purposes
+
+type: 
+	0: null, inactive
+	1: <normal>
+	???
+
+flags for <normal> type segments:
+	3: invert region access (specifies a region of memory not allowed for this entry)
+	2: readable
+	1: writable
+	0: executable
+
+base address:
+	This number is added to the address for all pointers referencing this segment
+
+limit:
+	This is the maximum value allowed for the address of the pointer referencing this segment
+
+permissions required to use:
+	The active task must have all of the permissions set here to use this segment
+
+permissions not allowed to use:
+	The active task must not have any of these permissions to use this segment
+
+32-bit example:
+	 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
+	+------------------------------------------------------------------------------------------------+
+	| 0  1  0  0  0  0  0  0  1  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |
+	| 0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0 |
+	| 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 |
+	| 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  1  0 |
+	+------------------------------------------------------------------------------------------------+
+
+flags: 0 1 0 0
+	not inverted
+	readable
+	not writable
+	not executable
+
+base address: 1  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+	0x900000
+
+type: 0 0 0 1
+	type 1: <normal>
+
+limit: 0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0
+	0x400
+
+permissions required: 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+	must have 31st permission to use this segment
+
+permissions not allowed: 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  1  0
+	must not have 1st or 2nd permission to use this segment

@@ -1,0 +1,11 @@
+Each enty is n*2 bits long, where n is the current mode in bits
+TODO: Specify a limit for them
+
+It uses the following format:
+	(higher address)
+	+--------------------------------+
+	| Pointer to executable code run |
+	+--------------------------------+
+	| Privileges required for usage  |
+	+--------------------------------+
+	(lower address)

@@ -1,0 +1,11 @@
+IP (Instruction Pointer)
+	Pointer to the current instruction being executed
+	It is not directly affected by OR
+
+	Read-only, can be set by certain jump instructions
+
+SP (Stack Pointer)
+	Pointer to the bottom of the stack (grows down) (used implicitly by push/pop instructions)
+
+BP (Base Pointer)
+	Pointer to the top of the stack (grows down) (used implicitly by push/pop instructions)
