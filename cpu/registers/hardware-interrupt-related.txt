@@ -1,5 +1,0 @@
-OIP (Old Instruction Pointer)
-	Used to store the old IP when interrupts occur
-
-OPR (Old Privilege Register)
-	Used to store the old PR when interrupts occur

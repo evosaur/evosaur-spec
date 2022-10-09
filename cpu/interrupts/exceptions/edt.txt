@@ -1,0 +1,4 @@
+Each entry is n bits long, where n is the current mode in bits
+TODO: Specify a limit for them
+
+Each entry is a pointer to the code to be executed

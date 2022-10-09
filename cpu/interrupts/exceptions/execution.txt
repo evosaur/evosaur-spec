@@ -1,0 +1,29 @@
+For non-double exceptions:
+	OPRE gets set to the PR from the previous code running
+	OIPE gets set to the IP from the previous code running
+	PR is set to all 1s
+
+	Hardware interrupts will not occur until after the current processing has been finished via `irete`
+
+	When returning via irete:
+		PR is set to OPRE
+		Execution jumps to OIPE
+
+For a double exception:
+	OPRDE is set to the PR from the previous code running
+	OIPDE is set to the IP from the previous code running
+	PR is set to all 1s
+
+	Segmentation is ignored for the double exception handler, flat addressing is used with no protection
+
+	If any exceptions occur during execution of the double exception handler:
+		If this is not the only core active on the system:
+			Broadcasts a tripple fault message
+			Shuts down
+
+		If this is the only core active on the system:
+			Restarts the system
+
+	When returning via iretde:
+		PR is set to OPRDE
+		Execution jumps to OIPDE

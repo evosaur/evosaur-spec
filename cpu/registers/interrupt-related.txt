@@ -1,0 +1,17 @@
+OIPH (Old Instruction Pointer [Hardware])
+	Used to store the old IP when hardware interrupts occur
+
+OPRH (Old Privilege Register [Hardware])
+	Used to store the old PR when hardware interrupts occur
+
+OIPE (Old Instruction Pointer [Exception])
+	Used to store the old IP when (non-double) exceptions occur
+
+OPRE (Old Privilege Register [Exception])
+	Used to store the old PR when (non-double) exceptions occur
+
+OIPDE (Old Instriction Pointer [Double Exception])
+	Used to store the old IP when double exceptions occur
+
+OPRDE (Old Privilege Register [Double Exception])
+	Used to store the old PR when double exceptions occur
