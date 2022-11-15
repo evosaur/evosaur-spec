@@ -1,5 +1,5 @@
 Each entry is n*4 bits long, where n is the current mode in bits
-TODO: Specifiy a limit for them
+TODO: Specify a limit for them
 
 It uses the following format:
 	(higher address)

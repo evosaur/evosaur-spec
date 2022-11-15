@@ -1,4 +1,4 @@
-When a hardware interrut occurs:
+When a hardware interrupt occurs:
 	OPRH gets set to the PR from the previous code running
 	OIPH gets set to the IP from the previous code running
 	PR is set to all 1s

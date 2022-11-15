@@ -1,0 +1,41 @@
+Dynamic VLIW
+	Allows a dynamic number of instructions to be queued for simultaneous execution
+
+	All inputs within the same queue will be calculated before outputs
+		`mov R0, R1` and `mov R1, R0` put into the same queue will result in swapping R0 and R1
+
+	If any exception occurs during the execution of the queued instructions, all output will be discarded
+	If multiple exceptions would have theoretically occurred, which one is triggered is undefined
+
+	Current format ideas:
+		A)
+			effects:
+				uses space efficiently when using many repetitions of the same opcodes
+				easier for the CPU to parse
+
+				requires all parameter lengths to be the same within the opcode
+				wastes space when few repetitions of the same opcode exists
+
+			format:
+				num_opcodes
+				for each:
+					opcode
+					num_instructions
+					for each:
+						parameters
+				size_of_immediate_references
+				for each:
+					value
+
+		B) 
+			effects:
+				allows variable length parameters
+
+				harder for the CPU to parse
+
+			format:
+				size_of_queue
+				for each instruction:
+					opcode
+					parameters
+					immediate references

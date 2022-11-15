@@ -4,6 +4,7 @@ For non-double exceptions:
 	PR is set to all 1s
 
 	Hardware interrupts will not occur until after the current processing has been finished via `irete`
+	Any exceptions that occur before `irete` will trigger a double exception instead of the normal one
 
 	When returning via irete:
 		PR is set to OPRE
@@ -18,7 +19,7 @@ For a double exception:
 
 	If any exceptions occur during execution of the double exception handler:
 		If this is not the only core active on the system:
-			Broadcasts a tripple fault message
+			Broadcasts a triple fault message
 			Shuts down
 
 		If this is the only core active on the system:

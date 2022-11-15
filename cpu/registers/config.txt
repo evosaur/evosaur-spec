@@ -5,7 +5,7 @@ MR (Mode Register)
 
 	On read
 		Gives supported modes
-			If ((1 << ([desired mode in bytes] - 1)) & cr0) != 0, then it is supported
+			If ((1 << ([desired mode in bytes] - 1)) & MR) != 0, then it is supported
 
 			Support for 16-bit mode, 64-bit mode, 128-bit mode, and 256 bit mode would be represented as 111010b
 

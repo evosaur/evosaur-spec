@@ -1,4 +1,4 @@
-Each enty is n*2 bits long, where n is the current mode in bits
+Each entry is n*2 bits long, where n is the current mode in bits
 TODO: Specify a limit for them
 
 It uses the following format:
