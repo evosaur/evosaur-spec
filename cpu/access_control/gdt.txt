@@ -68,3 +68,5 @@ permissions required: 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
 
 permissions not allowed: 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  1  0
 	must not have 1st or 2nd permission to use this segment
+
+Access MUST be checked prior to any action, speculative or otherwise
