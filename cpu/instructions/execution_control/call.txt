@@ -1,0 +1,11 @@
+Number of parameters: 1
+
+Usage:
+	call <target>
+
+Effect:
+	IP pushed to stack
+	IP moved to <target>
+
+Exceptions:
+	None

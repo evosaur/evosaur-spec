@@ -1,0 +1,10 @@
+Number of parameters: 1
+
+Usage:
+	jump <target>
+
+Effect:
+	Sets IP to <target>
+
+Exceptions:
+	None

@@ -25,9 +25,9 @@ Dynamic VLIW
 				num_opcodes
 				for each:
 					opcode
-					num_instructions
+					num_parameters
 					for each:
-						parameters
+						value
 				size_of_immediate_references
 				for each:
 					value
