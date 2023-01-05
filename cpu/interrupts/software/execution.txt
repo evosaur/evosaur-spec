@@ -1,8 +1,0 @@
-When calling a software interrupt:
-	R0 gets overwritten with the current PR
-	R1 gets overwritten with a pointer of the same segment as IP, pointing to the next instruction
-	PR is set to all 1s
-
-When returning via iretp:
-	PR is set to R0
-	Execution jumps to R1

@@ -1,0 +1,66 @@
+All task switches will occur after the current instructions in the queue have finished being processed and written
+	Will not conflict with other writes within the same instruction queue
+	Triggers <TODO> exception if multiple task switches occur within the same instruction queue
+
+TODO: mark current CPU executing it
+
+Call process:
+	Only allowed to be used by the original process
+		Triggers <TODO> exception otherwise
+
+	Custom ID must match between the tdt at the index and the one specified by the instruction, and the target must be marked as valid
+		TODO: trigger exception? set a flag?
+
+	One segment may be passed to the callee, used by the callee with all segment bits set
+		Caller may call with all segment bits set to not pass a segment
+
+	Current process id in the tdt will be set to the id of the callee
+	Current segments will be saved to the tdt, and those of the callee will be loaded
+	PR as specified in the callee's tdt for the callable segment will be loaded, and current PR is saved to the tdt
+	IP of next instruction is saved to tdt
+	Stack pointers are saved to tdt
+
+	Jumps to <callee's callable segment>, offset 0
+
+Return process:
+	Only allowed to be used by the callee
+		Triggers <TODO> exception otherwise
+
+	Segments will be loaded from the tdt
+	Process id in the tdt is set to the original process's id
+	Stack pointers are loaded from the tdt
+	PR is loaded from the tdt
+
+	IP is loaded from the tdt
+
+Switch process:
+	Only allowed to be used by the original process
+		Triggers <TODO> exception otherwise
+
+	Only allowed to switch to a process that is not currently active
+		TODO: trigger exception? set a flag?
+
+	Custom ID must match between the tdt at the index and the one specified by the instruction, and the target must be marked as valid
+		TODO: trigger exception? set a flag?
+
+	All registers are saved to the current tdt and loaded from the target's tdt index
+
+	Loads all registers from the target's tdt index
+
+Switch process and exit exception/interrupt handler:
+	Only allowed to be used while in an exception/interrupt handler (TODO: different opcode for each?)
+		Triggers <TODO> exception otherwise
+
+	Only allowed to switch to a process that is not currently active
+		TODO: trigger exception? set a flag?
+
+	Only allowed to switch to a process that is valid
+		TODO: trigger exception? set a flag?
+
+	All registers are saved to the current tdt and loaded from the target's tdt index
+		IP and PR are saved as if all exception/interrupt handlers returned
+		This saving step will be skipped if the entry for the current process is not flagged as valid
+
+	Allows more interrupts to be processed
+
+	Loads all registers from the target's tdt index

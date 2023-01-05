@@ -1,7 +1,7 @@
 Each entry is n*4 bits long, where n is the current mode in bits
-TODO: Specify a limit for them
 
-It uses the following format:
+Each entry uses the following format:
+	width: same number of bits as current mode
 	(higher address)
 	+---------------------+-------------------------+
 	| upper 4 bits: flags | lower 1/2: base address |

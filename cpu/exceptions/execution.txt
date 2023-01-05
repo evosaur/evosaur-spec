@@ -3,8 +3,8 @@ For non-double exceptions:
 	OIPE gets set to the IP from the previous code running
 	PR is set to all 1s
 
-	Hardware interrupts will not occur until after the current processing has been finished via `irete`
-	Any exceptions that occur before `irete` will trigger a double exception instead of the normal one
+	Interrupts will not occur until after the current processing has been finished via `irete`, or an appropriate task switch occurs
+	Any exception that occurs before `irete`, or an appropriate task switch, will trigger a double exception instead of the normal one
 
 	When returning via irete:
 		PR is set to OPRE

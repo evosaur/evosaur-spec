@@ -1,0 +1,23 @@
+Each entry is n*(5 + number_of_registers) bits long, where n is the current mode in bits
+
+Each entry uses the following format:
+	width: same number of bits as current mode
+	(higher address)
+	+----------------------------------------------------------------------------------+
+	| array of register's contents on last switch                                      |
+	+-----------------------------------+----------------------------------------------+
+	| upper 1/2: number of segments     | lower 1/2: pointer to segments               |
+	+-----------------------------------+----------------------------------------------+
+	| upper 1/2: callable segment index | lower 1/2: current process being executed as |
+	+-----------------------------------+----------------------------------------------+
+	| PR to be used when called                                                        |
+	+----------------------------------------------------------------------------------+
+	| reserved for specifying where it's being executed                                |
+	+-----------------------------------+---------------------+------------------------+
+	| upper 1/2: custom id              | n bits below: flags | remaining: unused      |
+	+-----------------------------------+---------------------+------------------------+
+	(lower address)
+
+Flags:
+	0: Valid
+	1: Currently running
