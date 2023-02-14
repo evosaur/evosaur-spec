@@ -1,0 +1,18 @@
+Binary format:
+	is_conditional[1], instruction id[remaining bits]
+
+
+is_conditional:
+	Appends 1 parameter to the normal parameter list for the instruction:
+		Lowest 3 bits: flags for each of the following checked, from lowest to highest:
+			Zero
+			Overflow
+			Carry
+		Next 3 bits:
+			Value for each of the above that it should match
+		Remaining bits:
+			Index into instruction queue for which result is to be compared
+
+	Conditional instructions will be executed after unconditional ones
+
+	Conditional instructions will never set flags, if a conditional instruction references another, it will always be based on null flags
