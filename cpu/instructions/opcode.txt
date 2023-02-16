@@ -3,15 +3,20 @@ Binary format:
 
 
 is_conditional:
-	Appends 1 parameter to the normal parameter list for the instruction:
-		Lowest 3 bits: flags for each of the following checked, from lowest to highest:
-			Zero
-			Overflow
-			Carry
-		Next 3 bits:
-			Value for each of the above that it should match
-		Remaining bits:
-			Index into instruction queue for which result is to be compared
+	n: number of bits for current mode
+	s: minimum number of bits required to represent n-1
+	/: integer division
+
+	Appends 2 parameters to the normal parameter list for the instruction:
+		First parameter:
+			Lowest (n-s)/2 bits:
+				Which bits to check
+			Next (n-s)/2 bits:
+				Value for each of the above that it should match
+			Remaining bits:
+				Bitwise offset into second parameter for value to be used
+		Second parameter:
+			Value to be used
 
 	Conditional instructions will be executed after unconditional ones
 
