@@ -1,0 +1,10 @@
+Number of parameters: 3
+
+Usage:
+	Subtract <output> <value0> <value1>
+
+Effect:
+	Subtracts <value0> from <value1> and stores it in <output>
+
+Exceptions:
+	None

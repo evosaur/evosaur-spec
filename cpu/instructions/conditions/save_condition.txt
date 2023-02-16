@@ -1,0 +1,18 @@
+Number of parameters:
+
+Usage:
+	save_condition <output> <offset> <conditional parameter>
+
+conditional parameter: same as is_conditional from ../opcode.txt, but with the following changes:
+	Values to be compared are instead xor'd
+
+Effect:
+	Saves the selected flags to <output> at bitwise position <offset>
+		Flags are xor'd with the comparison value
+		Resulting value is shifted down to not have gaps from unused flags
+
+Exceptions:
+	None
+
+Notes:
+	Will be executed in the conditional phase

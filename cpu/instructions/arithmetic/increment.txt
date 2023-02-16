@@ -1,0 +1,10 @@
+Number of parameters: 1
+
+Usage:
+	increment <output>
+
+Effect:
+	Adds 1 to <output>
+
+Exceptions:
+	None

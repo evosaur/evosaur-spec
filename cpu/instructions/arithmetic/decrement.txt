@@ -1,0 +1,10 @@
+Number of parameters: 1
+
+Usage:
+	decrement <output>
+
+Effect:
+	Subtracts 1 from <output>
+
+Exceptions:
+	None

@@ -1,0 +1,12 @@
+Number of parameters: 3
+
+Usage:
+	bitwise_condition <input> <bits to be compared> <value to compare with>
+
+Effect:
+	Sets the zero flag if exactly one of <bits to be compared> in <input> match <value to compare with>
+	Sets the overflow flag if at least one of <bits to be compared> in <input> match <value to compare with>
+	Sets the carry flag if all of <bits to be compared> in <input> match <value to compare with>
+
+Exceptions:
+	None

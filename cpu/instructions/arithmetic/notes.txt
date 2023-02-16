@@ -1,0 +1,4 @@
+Unless otherwise specified, all arithmetic instructions:
+	Set the zero flag when the result is 0
+	Set the overflow flag when a signed operation results in inversion of the sign due to lack of bits to store the value
+	Set the carry flag when an unsigned operation results in a lower number due to lack of bits to store the value
