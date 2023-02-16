@@ -1,0 +1,10 @@
+Number of parameters: 5
+
+Usage:
+	subtract_with_borrow <output> <value0> <value1> <reference> <offset>
+
+Effect:
+	Subtracts (<value0> + bit <offset> in <reference>) from <value1>
+
+Exceptions:
+	None

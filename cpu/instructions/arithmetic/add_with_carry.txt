@@ -1,0 +1,10 @@
+Number of parameters: 5
+
+Usage:
+	add_with_carry <output> <value0> <value1> <reference> <offset>
+
+Effect:
+	Adds (<value0> + bit <offset> in <reference>) to <value1> and stores it in <output>
+
+Exceptions:
+	None

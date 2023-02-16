@@ -1,0 +1,14 @@
+Number of parameters: 4
+
+Usage:
+	signed_multiply <overflow> <result> <value0> <value1>
+
+Effect:
+	Performs the signed multiplication <value0>*<value1>, storing the integer result in <result> and any overflowing bits into <overflow>
+
+Exceptions:
+	None
+
+Flags:
+	Sets the overflow flag if <overflow>:<result> != <result>
+	Carry flag is never set
