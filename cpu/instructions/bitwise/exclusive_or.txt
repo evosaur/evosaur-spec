@@ -1,0 +1,10 @@
+Number of parameters: 3
+
+Usage:
+	exclusive_or <output> <value0> <value1>
+
+Effect:
+	Sets <output> to the bitwise exclusive or of <value0> and <value1>
+
+Exceptions:
+	None

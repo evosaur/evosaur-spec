@@ -1,0 +1,10 @@
+Number of parameters: 3
+
+Usage:
+	and <output> <value0> <value1>
+
+Effect:
+	Sets <output> to the bitwise and of <value0> and <value1>
+
+Exceptions:
+	None

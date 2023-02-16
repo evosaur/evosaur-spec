@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	not <output> <value>
+
+Effect:
+	Sets <output> to the bitwise not of <value>
+
+Exceptions:
+	None

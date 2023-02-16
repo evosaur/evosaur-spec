@@ -1,0 +1,10 @@
+Number of parameters: 3
+
+Usage:
+	arithmetic_shift_right <output> <value> <amount>
+
+Effect:
+	Sets <output> to <value> shifted to the right <amount> bits, filling in leading bits with the most significant bit of <value>
+
+Exceptions:
+	None

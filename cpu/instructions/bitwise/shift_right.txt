@@ -1,0 +1,10 @@
+Number of parameters: 3
+
+Usage:
+	shift_right <output> <value> <amount>
+
+Effect:
+	Sets <output> to <value> shifted to the right <amount> bits
+
+Exceptions:
+	None

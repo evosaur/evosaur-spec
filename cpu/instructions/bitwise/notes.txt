@@ -1,0 +1,4 @@
+Unless otherwise specified, all bitwise instructions will:
+	Set the zero flag when all bits of the result are zero
+	Not set the carry flag
+	Not set the overflow flag
