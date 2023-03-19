@@ -1,0 +1,25 @@
+TODO: Assign bit in FR
+
+Offset: 9 + (n/16)
+
+Replaces the offset field in the gdt with the following:
+	Width: half the number of bits for the current mode
+	Value: pointer to array of chunks, physical address
+
+Array of chunks:
+	Width: half the number of bits for the current mode
+
+	Value:
+		Upper (n - offset) bits:
+			Pointer to physical address >> offset
+		Lowest bit:
+			Present
+		Remaining bits:
+			Unused by this system
+
+
+	Each value in the array represents 1 << offset bytes of memory.
+	Physical address is calculated from a reference such that:
+		Physical address = (gdt[segment].chunks[addr>>offset].address << offset) | (lowest offset bits of addr)
+
+		Triggers a page fault if the present bit is not set
