@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	exchange <value0> <value1>
+
+Effect:
+	Atomically (from a multi-cpu perspective) sets <value0> to <value1>, and <value1> to <value0>
+
+Exceptions:
+	None

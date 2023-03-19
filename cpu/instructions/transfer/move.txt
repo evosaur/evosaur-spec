@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	move <output> <input>
+
+Effect:
+	Sets <output> to <input>
+
+Exceptions:
+	None

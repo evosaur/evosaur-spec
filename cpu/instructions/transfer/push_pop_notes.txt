@@ -1,0 +1,2 @@
+Exact value to use for SP during push/pop instructions within the same queue is to be considered as if each push/pop instrction were executed sequentially according to their placement in the instruction queue
+Resulting SP written in the end is to be the sum of all changes from executed push/pop instructions in the queue

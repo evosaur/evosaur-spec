@@ -1,0 +1,11 @@
+Number of parameters: 1
+
+Usage:
+	pop <output>
+
+Effect:
+	Sets <output> to [SP], then increments SP by sizeof <output>
+	See ./push_pop_notes.txt
+
+Exceptions:
+	Stack error if [SP] is not readable

@@ -1,0 +1,11 @@
+Number of parameters: 1
+
+Usage:
+	push <value>
+
+Effect:
+	Decrements SP by sizeof <value>, then sets [SP] to <value>
+	See ./push_pop_notes.txt
+
+Exceptions:
+	Stack error if [SP] is not writable
