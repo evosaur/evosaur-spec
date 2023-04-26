@@ -4,7 +4,7 @@ Binary format:
 
 is_conditional:
 	n: number of bits in first parameter
-	s: minimum number of bits required to represent (number of bits for current mode)-1
+	s: minimum number of bits required to represent (number of bits for current mode - 1)
 	/: integer division
 
 	Appends 2 parameters to the normal parameter list for the instruction:
@@ -23,5 +23,5 @@ is_conditional:
 	Conditional instructions will never set flags, if a conditional instruction references another, it will always be based on null flags
 
 Exceptions:
-	If s > n:
+	If (s+2) > n:
 		TODO: make exception list
