@@ -3,7 +3,7 @@ When an interrupt occurs:
 	OIPI gets set to the IP from the previous code running
 	PR is set to all 1s
 
-The next interrupt will not occur until after the current processing has been finished via `ireti`
+The next interrupt will not occur until after the current processing has been finished via `ireth`
 
 When returning via ireth:
 	PR is set to OPRI

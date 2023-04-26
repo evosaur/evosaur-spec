@@ -1,0 +1,14 @@
+Number of parameters: 0
+
+Usage:
+	ireth
+
+Effect:
+	../../interrupts/execution.txt
+
+	IP is set to OIPH
+	PR is set to OPRH
+	Hardware interrupts are allowed again
+
+Exceptions:
+	`Invalid operation` if not currently executing a hardware interrupt

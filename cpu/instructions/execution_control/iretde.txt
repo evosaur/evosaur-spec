@@ -1,0 +1,14 @@
+Number of parameters: 0
+
+Usage:
+	iretde
+
+Effect:
+	../../exceptions/execution.txt
+
+	IP is set to OIPDE
+	PR is set to OPRDE
+	Will be considered to be in the previous exception handler
+
+Exceptions:
+	`Invalid operation` if not currently executing a double excetion handler

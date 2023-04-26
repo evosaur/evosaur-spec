@@ -1,0 +1,14 @@
+Number of parameters: 0
+
+Usage:
+	irete
+
+Effect:
+	../../exceptions/execution.txt
+
+	IP is set to OIPE
+	PR is set to OPRE
+	No longer considered to be in an exception handler
+
+Exceptions:
+	`Invalid operation` if not currently executing an excetion handler
