@@ -15,7 +15,7 @@ MR (Mode Register)
 			100b would represent 32-bit mode
 
 		Only one bit is allowed to be set
-			Triggers <TODO> exception otherwise
+			Triggers `invalid operation` exception otherwise
 
 		No need for a jump instruction immediately after it
 
@@ -27,7 +27,7 @@ PR (Privilege Register)
 	CPU initializes with it set to all 1s
 	Always readable
 	Writing directly is only allowed to remove permissions
-		Triggers <TODO> exception otherwise
+		Triggers `access violation` exception otherwise
 
 	Additional privileges can be granted by interrupts, exceptions and IRQs as configured by the IDT, EDT and IRQT, respectively
 

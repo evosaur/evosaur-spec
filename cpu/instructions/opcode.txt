@@ -24,4 +24,4 @@ is_conditional:
 
 Exceptions:
 	If (s+2) > n:
-		TODO: make exception list
+		Triggers `illegal instruction` exception

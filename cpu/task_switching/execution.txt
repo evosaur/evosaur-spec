@@ -1,15 +1,15 @@
 All task switches will occur after the current instructions in the queue have finished being processed and written
 	Will not conflict with other writes within the same instruction queue
-	Triggers <TODO> exception if multiple task switches occur within the same instruction queue
+	Triggers `illegal instruction` exception if multiple task switches occur within the same instruction queue
 
 TODO: mark current CPU executing it
 
 Call process:
 	Only allowed to be used by the original process
-		Triggers <TODO> exception otherwise
+		Triggers `invalid operation` exception otherwise
 
 	Custom ID must match between the tdt at the index and the one specified by the instruction, and the target must be marked as valid
-		TODO: trigger exception? set a flag?
+		Sets the `zero` flag and skips execution of this instruction otherwise
 
 	One segment may be passed to the callee, used by the callee with all segment bits set
 		Caller may call with all segment bits set to not pass a segment
@@ -24,7 +24,7 @@ Call process:
 
 Return process:
 	Only allowed to be used by the callee
-		Triggers <TODO> exception otherwise
+		Triggers `invalid operation` exception otherwise
 
 	Segments will be loaded from the tdt
 	Process id in the tdt is set to the original process's id
@@ -35,27 +35,27 @@ Return process:
 
 Switch process:
 	Only allowed to be used by the original process
-		Triggers <TODO> exception otherwise
+		Triggers `invalid operation` exception otherwise
 
 	Only allowed to switch to a process that is not currently active
-		TODO: trigger exception? set a flag?
+		Sets the `zero` flag and skips execution of this instruction otherwise
 
 	Custom ID must match between the tdt at the index and the one specified by the instruction, and the target must be marked as valid
-		TODO: trigger exception? set a flag?
+		Sets the `zero` flag and skips execution of this instruction otherwise
 
 	All registers are saved to the current tdt and loaded from the target's tdt index
 
 	Loads all registers from the target's tdt index
 
 Switch process and exit exception/interrupt handler:
-	Only allowed to be used while in an exception/interrupt handler (TODO: different opcode for each?)
-		Triggers <TODO> exception otherwise
+	Only allowed to be used while in an exception/interrupt handler
+		Triggers `invalid operation` exception otherwise
 
 	Only allowed to switch to a process that is not currently active
-		TODO: trigger exception? set a flag?
+		Sets the `zero` flag and skips execution of this instruction otherwise
 
-	Only allowed to switch to a process that is valid
-		TODO: trigger exception? set a flag?
+	Custom ID must match between the tdt at the index and the one specified by the instruction, and the target must be marked as valid
+		Sets the `zero` flag and skips execution of this instruction otherwise
 
 	All registers are saved to the current tdt and loaded from the target's tdt index
 		IP and PR are saved as if all exception/interrupt handlers returned

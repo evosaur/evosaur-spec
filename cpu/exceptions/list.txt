@@ -1,0 +1,7 @@
+0:	Division by zero
+1:	Illegal instruction	(used in cases where it is never valid)
+2:	Invalid operation	(used in cases where it is only invalid in this context)
+3:	Access violation
+
+4:	Double exception
+5:	Page fault
