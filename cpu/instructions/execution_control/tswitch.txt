@@ -1,0 +1,16 @@
+Number of parameters: 2
+
+Usage:
+	tswitch <task index> <id>
+
+Effect:
+	See ../../task_switching/execution.txt
+
+Exceptions:
+	`Invalid operation` if not the original task
+
+	`Illegal instruction` if used with any other task-related instruction in the same queue
+		Not triggered if conditional and only one was selected to be run
+
+Flags:
+	Zero if id does not match the task at the index or the task at index is not marked as valid

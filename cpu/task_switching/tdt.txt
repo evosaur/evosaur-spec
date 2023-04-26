@@ -8,11 +8,11 @@ Each entry uses the following format:
 	+-----------------------------------+----------------------------------------------+
 	| upper 1/2: number of segments     | lower 1/2: pointer to segments               |
 	+-----------------------------------+----------------------------------------------+
-	| upper 1/2: callable segment index | lower 1/2: current process being executed as |
+	| upper 1/2: callable segment index | lower 1/2: current task being executed as    |
 	+-----------------------------------+----------------------------------------------+
 	| PR to be used when called                                                        |
 	+----------------------------------------------------------------------------------+
-	| reserved for specifying where it's being executed                                |
+	| reserved for specifying where it's being executed (TODO)                         |
 	+-----------------------------------+---------------------+------------------------+
 	| upper 1/2: custom id              | n bits below: flags | remaining: unused      |
 	+-----------------------------------+---------------------+------------------------+

@@ -15,7 +15,7 @@ For a double exception:
 	OIPDE is set to the IP from the previous code running
 	PR is set to all 1s
 
-	Segmentation is ignored for the double exception handler, flat addressing is used with no protection
+	All protection is ignored for the double exception handler, and flat addressing is used
 
 	If any exceptions occur during execution of the double exception handler:
 		If this is not the only core active on the system:

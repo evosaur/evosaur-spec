@@ -1,0 +1,13 @@
+Number of parameters: 0
+
+Usage:
+	tret
+
+Effect:
+	See ../../task_switching/execution.txt
+
+Exceptions:
+	`Invalid operation` if not the original task
+
+	`Illegal instruction` if used with any other task-related instruction in the same queue
+		Not triggered if conditional and only one was selected to be run
