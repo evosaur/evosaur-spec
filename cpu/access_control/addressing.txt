@@ -1,0 +1,8 @@
+Case 1: Full-width address given:
+	Upper half is used as an index into the gdt, lower half is used as an offset within the segment
+
+Case 2: Less than full width address given, segment selector specified:
+	Fills missing bits of a full-width address with the high bits of the specified segment selector, then processes as in case 1
+
+Case 3: Less than full width address given, no segment selector specified:
+	Same as case 2, but uses upper half of IP for instructions implicitly modifying IP, and SS0 otherwise, as the segment selector
