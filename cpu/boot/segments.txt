@@ -1,0 +1,9 @@
+Segment 0:
+	Set to the entire addressable space
+	Allows read+write+execute
+	Allows usage with any PR value
+	Base address is set to 0
+
+TODO: specify where in RAM this gdt is
+
+No other segments are in use

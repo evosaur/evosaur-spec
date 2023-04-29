@@ -1,0 +1,9 @@
+SS0 is set to 0
+
+IP is set to 0
+
+R0 is set to the boot drive's ID
+
+OFR is set to all 0s
+
+PR is set to all 1s

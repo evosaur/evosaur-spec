@@ -1,0 +1,3 @@
+Hardware interrupts are disabled
+
+Exceptions are not handled

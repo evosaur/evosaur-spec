@@ -41,7 +41,7 @@ FR (Feature Register)
 OFR (Optional Feature Register)
 	Consists of various bit flags for different features that can be enabled/disabled at runtime
 
-	See features/all.txt for a full list
+	See features/optional.txt for a full list
 
 	On read:
 		Lists features that can be enabled/disabled

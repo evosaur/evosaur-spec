@@ -1,0 +1,4 @@
+TODO: define values here
+The first <n> bytes of the drive selected for booting are loaded to RAM starting at address 0
+
+TODO: memory map? Maybe just communicate with ram/memory controller for that though

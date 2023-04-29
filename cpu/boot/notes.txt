@@ -1,0 +1,1 @@
+Anything neither defined here nor defined to have a fixed value may be set to anything upon booting
