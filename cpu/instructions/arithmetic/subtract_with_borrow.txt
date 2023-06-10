@@ -4,7 +4,7 @@ Usage:
 	subtract_with_borrow <output> <value0> <value1> <reference> <offset>
 
 Effect:
-	Subtracts (<value0> + bit <offset> in <reference>) from <value1>
+	Subtracts (<value1> + bit <offset> in <reference>) from <value0> and stores it in <output>
 
 Exceptions:
 	None
