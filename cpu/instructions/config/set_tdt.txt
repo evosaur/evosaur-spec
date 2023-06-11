@@ -1,0 +1,11 @@
+Number of parameters: 2
+
+Usage:
+	set_tdt <ptr> <size>
+
+Effect:
+	Sets the tdt to start at <ptr> and be <size> bytes long
+	<ptr> is the physical address
+
+Exceptions:
+	None

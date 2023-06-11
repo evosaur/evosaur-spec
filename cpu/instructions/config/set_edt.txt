@@ -1,0 +1,11 @@
+Number of parameters: 2
+
+Usage:
+	set_edt <ptr> <size>
+
+Effect:
+	Sets the edt to start at <ptr> and be <size> bytes long
+	<ptr> is the physical address
+
+Exceptions:
+	None

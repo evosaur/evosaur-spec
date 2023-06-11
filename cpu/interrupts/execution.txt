@@ -8,3 +8,6 @@ The next interrupt will not occur until after the current processing has been fi
 When returning via ireth:
 	PR is set to OPRI
 	Execution jumps to OIPI
+
+If an interrupt is triggered for an index not handled, it will be redirected to irq 0
+If irq 0 is not handled, it will be silently dropped
