@@ -1,5 +1,6 @@
 n: min number of bits to be able to represent all types
-TODO: define x
+y: min size required to represent each power of two value less than or equal to the current mode (in bytes, and greater than or equal to 1)
+x: y + [min size to represent each valid offset into the immediate value array]
 
 Binary format:
 	type[n], data[x]
@@ -10,7 +11,6 @@ Types:
 		Value is placed directly in the data section
 
 	Immediate reference:
-		y: min size required to represent each power of two value less than or equal to the current mode (in bytes, and greater than or equal to 1)
 		data[0 to x-y-1]:
 			size of immediate value
 

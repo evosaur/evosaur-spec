@@ -34,6 +34,6 @@ Dynamic VLIW
 			where to save them
 			bitwise offset in the destination
 
-	A minimum of <n> instructions must be accepted by all CPUs
+	A minimum of <n> instructions per queue must be accepted by all CPUs
 		TODO: define n
 		Specific implementations may accept more, up to the maximum specifiable by the format
