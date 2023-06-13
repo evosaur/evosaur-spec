@@ -21,18 +21,18 @@ Dynamic VLIW
 		size_of_instructions
 		for each:
 			opcode
-			num_parameters
-			for each:
+			num_instructions
+			for each * params per instruction:
 				value
 		size_of_immediate_references
 		for each:
 			value
-		size_of_flag_save_definitions
+		num_flag_save_definitions
 		for each:
 			instruction index in queue
-			which flags to save
+			which flags to save (1 bit per flag type available)
 			where to save them
-			bitwise offset in the destination
+			bitwise offset in the destination (log2(bits_for_current_mode) bits)
 
 	A minimum of <n> instructions per queue must be accepted by all CPUs
 		TODO: define n
