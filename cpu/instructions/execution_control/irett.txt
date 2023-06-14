@@ -6,6 +6,8 @@ Usage:
 Effect:
 	See ../../task_switching/execution.txt
 
+	Only takes effect after all other writes are complete
+
 Exceptions:
 	`Invalid operation` if not in an exception/interrupt handler
 

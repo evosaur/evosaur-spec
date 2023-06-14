@@ -10,5 +10,7 @@ Effect:
 	PR is set to OPRE
 	No longer considered to be in an exception handler
 
+	Only takes effect after all other writes are complete
+
 Exceptions:
 	`Invalid operation` if not currently executing an excetion handler

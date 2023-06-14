@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	subtract_inplace <output> <value>
+
+Effect:
+	Subtracts <value> from <output> and stores it in <output>
+
+Exceptions:
+	None

@@ -1,0 +1,10 @@
+Number of parameters: 0
+
+Usage:
+	ret
+
+Effect:
+	Same as `pop IP`
+
+Exceptions:
+	None

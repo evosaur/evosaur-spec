@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	add_inplace <output> <value>
+
+Effect:
+	Adds <value> to <output> and stores it in <output>
+
+Exceptions:
+	None

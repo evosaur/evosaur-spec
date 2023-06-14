@@ -10,5 +10,7 @@ Effect:
 	PR is set to OPRDE
 	Will be considered to be in the previous exception handler
 
+	Only takes effect after all other writes are complete
+
 Exceptions:
 	`Invalid operation` if not currently executing a double excetion handler

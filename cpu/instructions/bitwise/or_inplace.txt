@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	or_inplace <output> <value>
+
+Effect:
+	Sets <output> to the bitwise or of <value> and <output>
+
+Exceptions:
+	None

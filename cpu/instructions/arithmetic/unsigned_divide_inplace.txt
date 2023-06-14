@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	unsigned_divide_inplace <numerand> <divisor>
+
+Effect:
+	Performs the unsigned division <numerand>/<divisor>, storing the integer result in <numerand> and the remainder in <divisor>
+
+Exceptions:
+	Division by 0

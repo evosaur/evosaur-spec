@@ -1,0 +1,10 @@
+Number of parameters: 1
+
+Usage:
+	not_inplace <value>
+
+Effect:
+	Sets <value> to the bitwise not of <value>
+
+Exceptions:
+	None

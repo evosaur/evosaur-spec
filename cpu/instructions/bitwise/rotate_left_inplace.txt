@@ -1,0 +1,10 @@
+Number of parameters: 2
+
+Usage:
+	rotate_left_inplace <value> <amount>
+
+Effect:
+	Sets <value> to <value> rotated to the left <amount> bits
+
+Exceptions:
+	None
