@@ -1,6 +1,6 @@
-n: min number of bits to be able to represent all types
+n: min number of bits to be able to represent all parameter types
 y: min size required to represent each power of two value less than or equal to the current mode (in bytes, and greater than or equal to 1)
-x: y + [min size to represent each valid offset into the immediate value array]
+x: n + y + max([min size to represent each valid offset into the immediate value array], [min size to represent all registers])
 
 Binary format:
 	type[n], data[x]
@@ -11,20 +11,26 @@ Types:
 		Value is placed directly in the data section
 
 	Immediate reference:
-		data[0 to x-y-1]:
+		data[n to x-y-1]:
 			size of immediate value
 
 		data[x-y to x-1]:
 			byte offset into the array of immediate values
 
 	Register:
-		data just to select which register
+		data[n to x-y-1]:
+			how much of the register to use
+
+		data[x-y to x-1]:
+			which register to use
 
 	Memory at immediate reference:
 		Uses RAM pointed to by the value as obtained in `immediate reference` above
+		Size is specified by data[0 to n-1]
 
 	Memory at register:
 		Uses RAM pointed to by the value as obtained in `register` above
+		Size is specified by data[0 to n-1]
 
 	TODO: Will add more later
 
