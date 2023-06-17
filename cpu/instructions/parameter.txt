@@ -1,36 +1,81 @@
-n: min number of bits to be able to represent all parameter types
-y: min size required to represent each power of two value less than or equal to the current mode (in bytes, and greater than or equal to 1)
-x: n + y + max([min size to represent each valid offset into the immediate value array], [min size to represent all registers])
+NOTE: `required' refers to what the specification allows, not what the specific CPU allows. Format is not to be implementation dependent.
+
+n: min number of bits required to be able to represent all parameter types
+x: min size required to represent each power of two value less than or equal to the current mode (in bytes, and greater than or equal to 1)
+y: min size to specify a particular segment register
 
 Binary format:
-	type[n], data[x]
+	type[n], data[<type dependent>]
 
 
 Types:
-	Short immediate reference:
-		Value is placed directly in the data section
+	Single immediate reference:
+		Data size: x + [size of immediate value]
+		data[0 to x-1]:
+			Size of immediate value
+		data[x to end]:
+			Raw value
 
-	Immediate reference:
-		data[n to x-y-1]:
-			size of immediate value
+	Shared immediate reference:
+		Data size: x + [minimum size required to represent an offset in the immediate references section]
+		data[0 to x-1]:
+			Size of immediate value
 
-		data[x-y to x-1]:
-			byte offset into the array of immediate values
+		data[x to end]:
+			Offset into the array of immediate values
 
 	Register:
-		data[n to x-y-1]:
-			how much of the register to use
+		Data size: x + [minimum size required to specify any register]
+		data[0 to x-1]:
+			How much of the register to use
 
-		data[x-y to x-1]:
-			which register to use
+		data[x to end]:
+			Which register to use
 
-	Memory at immediate reference:
-		Uses RAM pointed to by the value as obtained in `immediate reference` above
-		Size is specified by data[0 to n-1]
+	Memory at single immediate reference:
+		Uses RAM pointed to by the value as obtained in `single immediate reference` above
+		SS0 will be used for filling in the segment with unspecified bits
+		Prepends n bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
+
+	Memory at shared immediate reference:
+		Uses RAM pointed to by the value as obtained in `shared immediate reference` above
+		SS0 will be used for filling in the segment with unspecified bits
+		Prepends n bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
 
 	Memory at register:
 		Uses RAM pointed to by the value as obtained in `register` above
-		Size is specified by data[0 to n-1]
+		SS0 will be used for filling in the segment with unspecified bits
+		Prepends n bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
+
+	Memory at single immediate reference with segment override:
+		Uses RAM pointed to by the value as obtained in `single immediate reference` above
+		Prepends n + y bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
+			data[n to n+y-1]:
+				Which segment register to use
+
+	Memory at shared immediate reference with segment override:
+		Uses RAM pointed to by the value as obtained in `shared immediate reference` above
+		Prepends n + y bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
+			data[n to n+y-1]:
+				Which segment register to use
+
+	Memory at register with segment override:
+		Uses RAM pointed to by the value as obtained in `register` above
+		Prepends n + y bits to the data:
+			data[0 to n-1]:
+				Size of memory to use
+			data[n to n+y-1]:
+				Which segment register to use
 
 	TODO: Will add more later
 

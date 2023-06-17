@@ -21,18 +21,26 @@ Dynamic VLIW
 		size_of_instructions // size so it won't have to parse each to find where the immediate references start
 		for each:
 			opcode
-			num_instructions
-			for each * params per instruction:
+			size_of_params // size for similar reason as to the above
+			if size_of_params == 0:
+				num_instructions
+			for each param:
+				value (see ./parameter.txt for details)
+
+		has_shared_immediate_references
+		if has_shared_immediate_references:
+			size_of_immediate_references
+			for each:
 				value
-		size_of_immediate_references
-		for each:
-			value
-		num_flag_save_definitions
-		for each:
-			instruction index in queue
-			which flags to save (1 bit per flag type available)
-			where to save them
-			bitwise offset in the destination (log2(bits_for_current_mode) bits)
+
+		has_flag_save_definitions
+		if has_flag_save_definitions:
+			num_flag_save_definitions
+			for each:
+				instruction index in queue
+				which flags to save (1 bit per flag type available)
+				where to save them
+				bitwise offset in the destination (log2(bits_for_current_mode) bits)
 
 	A minimum of <n> instructions per queue must be accepted by all CPUs
 		TODO: define n
